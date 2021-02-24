@@ -6,11 +6,11 @@
 
 ### Introduction
 
-In this project, we train a deep reinforcement learning agent to navigate a square world, while collecting yellow bananas adn avoiding blue. square world.  
+In this project, we train a deep reinforcement learning agent to navigate a square world, while collecting yellow bananas and avoiding blue. square world.  
 
 ![Trained Agent][image1]
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  The video above shows an agent using double Q dueling networks agent trained for 800 episodes.  
+A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  The video above shows an agent using double Q dueling networks trained for 800 episodes.  
 
 ### State and Action Space
 The state space has 37 dimensions containing the agent's velocity, along with information about of objects surrounding the agent. The action space contains four discrete actions, corresponding to:
@@ -34,7 +34,15 @@ The agent is considered successful in the current setting, if it reaches more th
 
 **`3`** Download the notebook Navigator.ipynb and the python file util.py.
 
+### Training
+Simply follow the instructions in the first half of the Navigator.ipynb notebook
+
 ### Check Solutions
-If you want to examine solutions, download scores.csv, scores_dd.csv, checkpoint_800.pth and checkpoint_800_dueling_doubleq.pth and use the results part of the Navigator.ipynb notebook.
+To assess results from training, follow the instructions in the last half of the Navigator.ipynb notebook. 
+
+If you want to examine precalculated solutions, download scores.csv, scores_dd.csv, checkpoint_800.pth and checkpoint_800_dueling_doubleq.pth and use them instead of your own training results.
+
+### Important note for Linux users
+Due to what seems to be a bug in the Unity environment running on Linux machines, the notebook kernel has to be restarted between different trainings or different model assessments.
 
 
