@@ -10,7 +10,7 @@ In this project, we train a deep reinforcement learning agent to navigate a squa
 
 ![Trained Agent][image1]
 
-A reward of +1 is provided for collecting a yellow banana, and a reward of -1 is provided for collecting a blue banana.  The video above shows an agent using double Q dueling networks trained for 800 episodes.  
+A reward of +1 is provided for collecting a yellow banana, and a reward of -1 for collecting a blue banana.  The video above shows an agent using double Q dueling networks trained for 800 episodes.  
 
 ### State and Action Space
 The state space has 37 dimensions containing the agent's velocity, along with information about the objects surrounding the agent. The action space contains four discrete actions, corresponding to:
@@ -25,7 +25,7 @@ The agent is considered successful in the current setting, if it reaches more th
 ### Getting Started
 **`1`** Build a conda environment using the environment.yml file in this repository by running "conda env create -f environment.yml"
 
-**`2`** Download the Unity environment from the links that matches your operating system:
+**`2`** Download the Unity environment from the link that matches your system:
     - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
     - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
     - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
@@ -35,7 +35,7 @@ The agent is considered successful in the current setting, if it reaches more th
 **`3`** Download the notebook Navigator.ipynb and the python file util.py.
 
 ### Training
-Simply follow the instructions in the first half of the Navigator.ipynb notebook
+Simply follow the instructions in the first half of the Navigator.ipynb notebook. Rewards are saved in a file in a folder `results` (if that does not exist, you should create it) and checkpoints with neural network weights are saved at every 100th episode in the folder `checkpoints` (if that folder does not exist, you should create it).
 
 ### Check Solutions
 To assess results from training, follow the instructions in the last half of the Navigator.ipynb notebook. 
