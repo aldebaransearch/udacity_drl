@@ -57,22 +57,25 @@ class DuelingQNetwork(nn.Module):
         super(DuelingQNetwork, self).__init__()
         self.seed = torch.manual_seed(seed)
 
+        # Common part of network structure
         self.nn = torch.nn.Sequential(
             torch.nn.Linear(state_size, 64),
             torch.nn.ReLU(),  # LeakyReLU ELU(2)
             torch.nn.Linear(64, 64),
             torch.nn.ReLU())
 
+        # Network calculating advantages
         self.adv = torch.nn.Sequential(torch.nn.Linear(64, 64),
                                        torch.nn.ReLU(),
                                        torch.nn.Linear(64, action_size))
 
+        # Network calculating value
         self.val = torch.nn.Sequential(torch.nn.Linear(64, 64),
                                        torch.nn.ReLU(),
                                        torch.nn.Linear(64, 1))
 
     def forward(self, state):
-        """Build a network that maps state -> action values."""
+        """Build a network that maps state -> action advantage and value."""
         tmp = self.nn(state)
         adv = self.adv(tmp)
         val = self.val(tmp)
@@ -90,6 +93,8 @@ class Agent():
             state_size (int): dimension of each state
             action_size (int): dimension of each action
             seed (int): random seed
+            dueling (boolean): use dueling network structure
+            doubleq (boolean): use double Q estimates
         """
         self.state_size = state_size
         self.action_size = action_size
@@ -229,6 +234,7 @@ class ReplayBuffer:
 
 
 def chk_pt_file_name(i_episode,dueling,doubleq):
+    """ Utility function systematizing file name convention"""
     chk_pt_name = 'checkpoint_{0}'.format(i_episode)
     if dueling:
         chk_pt_name += '_dueling'
