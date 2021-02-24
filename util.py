@@ -5,6 +5,7 @@ import random
 from collections import namedtuple, deque
 import torch.optim as optim
 import numpy as np
+import os
 
 BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 64  # minibatch size
@@ -241,4 +242,16 @@ def chk_pt_file_name(i_episode,dueling,doubleq):
     if doubleq:
         chk_pt_name += '_doubleq'
     chk_pt_name += '.pth'
-    return chk_pt_name
+    return os.path.join('checkpoints',chk_pt_name)
+
+
+def set_all_fontsizes(ax, fontsize, legend=True):
+
+    for item in ([ax.title, ax.xaxis.label, ax.yaxis.label] +
+                 ax.get_xticklabels() + ax.get_yticklabels()):
+        item.set_fontsize(fontsize)
+    if legend:
+        ax.legend(fontsize=fontsize)
+
+    for tick in ax.xaxis.get_minorticklabels():
+        tick.set_fontsize(fontsize)
