@@ -6,7 +6,7 @@
 
 ### Introduction
 
-In this project, we train a deep reinforcement learning agent to navigate a square world, while collecting yellow bananas and avoiding blue.  
+In this project, we train a deep reinforcement learning agent to navigate a square world, while collecting yellow bananas and avoiding blue. The report describing the solution in greater detail can be found in [report_1.pdf](https://github.com/aldebaransearch/udacity_drl_project_1/blob/main/report_1.pdf)  
 
 ![Trained Agent][image1]
 
